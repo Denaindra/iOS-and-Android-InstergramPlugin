@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:XamarinKit;assembly=XamarinKit"
+             xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls"
+             BackgroundColor="#3b539a"
+             Style="{DynamicResource containPageStyle}"
+             x:Class="XamarinKit.Views.LoginPage">
+    <ContentPage.Content>
+        <Grid x:Name="loginGrid" RowSpacing="0" VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="2*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <!--            gray area-->
+            <StackLayout  Grid.Row="0" Grid.Column="0" VerticalOptions="FillAndExpand">
+           <Image Source="loginPageLogo.png" Aspect="AspectFit" HeightRequest="100" WidthRequest="250"  HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand" />
+<!--           <Label TextColor="Black" Text="Entre com seu e-mail e senha" HorizontalOptions="CenterAndExpand" FontSize="15"/>
+-->            </StackLayout>
+            <!--            white area-->
+           <Grid Grid.Row="1" Grid.Column="0" Margin="25,50">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+               
+       
+               <xfx:XfxEntry TextColor="White" Unfocused="EntryUnfocused" Text="{Binding Username}" HeightRequest="80" Focused="EntryFocused" Placeholder="Email" PlaceholderColor="White" Grid.Row="0" Grid.Column="0" />
+               <xfx:XfxEntry TextColor="White" Unfocused="EntryUnfocused" Text="{Binding Password}" Focused="EntryFocused" IsPassword = "true" HeightRequest="80"  Placeholder="Passwrd" PlaceholderColor="White" Grid.Row="1" Grid.Column="0" />
+               <Label Grid.Row="2" Grid.Column="0" x:Name="erroMsg" Text="Incorrect Username and password" TextColor="Transparent" HorizontalOptions="CenterAndExpand" />
+               
+                
+                <StackLayout Margin="0,40,0,0" Grid.Row="2" Grid.Column="0">
+               <Button HeightRequest="45"  Clicked="LoginClicked"  
+                        Text="ENTRAR" TextColor="White" 
+                       FontAttributes="Bold" BackgroundColor="#4d64a4" WidthRequest="200" 
+                       HorizontalOptions="FillAndExpand" />
+                    
+                    <Label LineBreakMode="WordWrap" FontSize="Small" TextColor="White" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Criptografado por " />
+                                <Span Text="Socialgram" FontAttributes="Bold"  />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    
+               </StackLayout>
+           
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

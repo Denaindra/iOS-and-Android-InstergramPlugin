@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+              Style="{DynamicResource containPageStyle}"
+             BackgroundColor="#d9d9d9"
+             xmlns:converters="clr-namespace:XamarinKit.Converters;assembly=XamarinKit"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="XamarinKit.Views.ItemPage">
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+          <converters:BoolvalueConverter x:Key="BoolvalueConverter"></converters:BoolvalueConverter>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Margin="0,30" Text="Selecione uma conta para conectar" TextColor="Black" FontSize="Medium" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" />
+              <Grid x:Name="lgoinGrid" IsVisible="{Binding IsEmptyList, Converter={StaticResource BoolvalueConverter},ConverterParameter={x:Reference Name=lgoinGrid}}" Margin="25,50" VerticalOptions="CenterAndExpand">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+          
+            <StackLayout Grid.Row="0" Grid.Column="0">
+            <Label Text="Não há contas para reconectar" FontSize="20" HorizontalOptions="CenterAndExpand" />
+            <Button HeightRequest="45" Margin="0,20,0,0"  Clicked="LogOutClick" BorderRadius="20" Text="Log Out" TextColor="White" FontAttributes="Bold" Style="{DynamicResource loginButtonStyle}" WidthRequest="200" HorizontalOptions="FillAndExpand" />
+             </StackLayout>
+            </Grid>
+            
+            <ListView IsVisible="{Binding IsEmptyList, Converter={StaticResource BoolvalueConverter},ConverterParameter={x:Reference Name=ItemView}}" 
+                      x:Name="ItemView" Margin="10,20,10,0" BackgroundColor="#d9d9d9" HasUnevenRows="true" SeparatorVisibility="None" ItemsSource="{Binding Menue}" Refreshing="Handle_Refreshing" CachingStrategy="RecycleElement"  IsPullToRefreshEnabled="true" ItemSelected="ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="0,5" VerticalOptions="FillAndExpand">
+                                <Frame CornerRadius="2" HasShadow="false" BorderColor="Black">
+                             <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    
+                                     <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                     </Grid.ColumnDefinitions>
+                                        
+                                    <Image Source="{Binding PICTURE_URL}" HeightRequest="70" WidthRequest="50" Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" />
+                                    <Label Grid.Row="0" Grid.Column="1" Text="{Binding USERNAME}" FontSize="25" TextColor="Gray" FontAttributes="None" HorizontalOptions="StartAndExpand"  />
+                                   <Label Grid.Row="1" Grid.Column="1" Text="Deslogado" FontSize="15" TextColor="Gray" FontAttributes="None" HorizontalOptions="StartAndExpand"  />
+                                    <StackLayout Grid.Row="2" Grid.Column="1"  />
+                                    
+                                    </Grid>
+                                    
+                                    </Frame>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+       
+         
+        </StackLayout>
+        
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageRender:GradientColorPage xmlns="http://xamarin.com/schemas/2014/forms"   
+             Style="{DynamicResource containPageStyle}" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:pageRender="clr-namespace:XamarinKit.CustomRenders"
+             StartColor="#b11e8a"
+             EndColor="#d03155" 
+             xmlns:local="clr-namespace:XamarinKit;assembly=XamarinKit" x:Class="XamarinKit.Views.SelecteChallengePage">
+    <pageRender:GradientColorPage.Content>
+        <Grid RowSpacing="0" VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="2*" />
+                   <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <!--            gray area-->
+            <StackLayout Grid.Row="0" Grid.Column="0" VerticalOptions="FillAndExpand">
+                <Image Source="insterLogo.png" Aspect="AspectFit" HeightRequest="100" WidthRequest="250" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand" />
+                <Label TextColor="White" Text="Onde receber o código de validação?" HorizontalOptions="CenterAndExpand" FontSize="15" />
+            </StackLayout>
+            <!--            white area-->
+            <Grid Grid.Row="1" Grid.Column="0" RowSpacing="50" Margin="25,70,25,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <StackLayout x:Name="stack1" IsVisible="false" Grid.Row="0" Orientation="Horizontal" Grid.Column="0">
+                    <Image x:Name="rabtn1" Source="dotCircle.png" HeightRequest="20" WidthRequest="20" />
+                    <Label x:Name="radio1Text" Text="" TextColor="#f19fc2" VerticalTextAlignment="Center" FontSize="17" />
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="RadioButton1" CommandParameter="1"  NumberOfTapsRequired="1" />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+                <StackLayout x:Name="stack2" IsVisible="false"  Grid.Row="1" Orientation="Horizontal" Grid.Column="0">
+                    <Image x:Name="rabtn2" Source="circleOutline.png" HeightRequest="20" WidthRequest="20" />
+                    <Label x:Name="radio2Text" Text="" TextColor="#f19fc2" VerticalTextAlignment="End" FontSize="17" />
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="RadioButton1" CommandParameter="2"  NumberOfTapsRequired="1"  />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>            
+                <Button HeightRequest="45" 
+                        Opacity=".7"
+                        FontSize="20"
+                        BorderColor="#d91a87" BackgroundColor="#dc006d"
+                        Margin="0,35,0,0" Clicked="ChnageChallange" 
+                        BorderRadius="0" Grid.Row="2" Grid.Column="0" Text="Enviar nesse!" TextColor="#f19fc2" 
+                        FontAttributes="Bold" Style="{DynamicResource loginButtonStyle}"
+                    WidthRequest="200" HorizontalOptions="FillAndExpand" /></Grid>
+            
+            
+                   <StackLayout Grid.Row="2" Opacity=".5" Orientation="Horizontal" Grid.Column="0" VerticalOptions="EndAndExpand"
+                         HeightRequest="55" BackgroundColor="#f791ad" >
+               <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+                <Image Source="lock.png"  VerticalOptions="CenterAndExpand" HeightRequest="20" WidthRequest="20" />
+                
+                <Label TextColor="White" VerticalOptions="CenterAndExpand" Text="Ambiente criptografado" />
+                </StackLayout>
+                
+                </StackLayout>
+        </Grid>
+    </pageRender:GradientColorPage.Content>
+</pageRender:GradientColorPage>

@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "684123746532",
+    "firebase_url": "https://flashchat-d922d.firebaseio.com",
+    "project_id": "flashchat-d922d",
+    "storage_bucket": "flashchat-d922d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:684123746532:android:165edf6fe0cf982c",
+        "android_client_info": {
+          "package_name": "com.gadperera.Fiverr.XamarinKit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "684123746532-kc1pk51mf7epus1cnumn7prv838mund8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOznZWf84BrY4KTbb0s2mOjj_3ar2E-VI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

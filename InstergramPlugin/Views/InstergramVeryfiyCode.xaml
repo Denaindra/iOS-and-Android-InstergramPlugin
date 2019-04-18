@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageRender:GradientColorPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:local="clr-namespace:XamarinKit;assembly=XamarinKit"
+                               Style="{DynamicResource containPageStyle}" 
+                              xmlns:entry="clr-namespace:XamarinKit.CustomRenders"
+                          xmlns:xfx="clr-namespace:Xfx;assembly=Xfx.Controls"
+                           xmlns:pageRender="clr-namespace:XamarinKit.CustomRenders"
+             StartColor="#b11e8a"
+             EndColor="#d03155" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="XamarinKit.Views.InstergramVeryfiyCode">
+    <pageRender:GradientColorPage.Content>
+         <Grid x:Name="loginGrid" RowSpacing="0" VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="2*" />
+                  <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <!--            gray area-->
+            <StackLayout Grid.Row="0" Grid.Column="0" VerticalOptions="FillAndExpand">
+                <Image Source="insterLogo.png" Aspect="AspectFit" HeightRequest="100" WidthRequest="250" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand" />
+                <Label TextColor="White" Text="Insira o còdigo recebido" HorizontalOptions="CenterAndExpand" FontSize="15" />
+
+            </StackLayout>
+            <!--            white area-->
+            <Grid Grid.Row="1" Grid.Column="0" Margin="25,50">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <entry:LoginEntry Unfocused="EntryUnFocused" Focused="EntryFocused" Text="{Binding VerifyCode}"
+                                  HeightRequest="55" TextColor="#f19fc2" Placeholder="000 000"  
+                                   BackgroundColor="#d91a87"
+                                
+                                 
+                                  PlaceholderColor="#f19fc2" Grid.Row="0" Grid.Column="0"/>
+                <Label Grid.Row="2" Grid.Column="0" x:Name="erroMsg" Text="Incorrect Code" TextColor="Transparent" HorizontalOptions="CenterAndExpand" />
+              
+                
+                
+                
+                
+                <Button HeightRequest="45" Opacity=".7"
+                        Margin="0,40,0,0" Clicked="VerifyCode" BorderRadius="0" Grid.Row="2" Grid.Column="0" 
+                        Text="Pronto!" TextColor="White" FontAttributes="Bold"
+                        BorderColor="#d91a87" 
+                        Style="{DynamicResource loginButtonStyle}"
+                    WidthRequest="200" HorizontalOptions="FillAndExpand" />
+            </Grid>
+            
+                    <StackLayout Grid.Row="2" Opacity=".5" Orientation="Horizontal" Grid.Column="0" VerticalOptions="EndAndExpand"
+                         HeightRequest="55" BackgroundColor="#f791ad" >
+               <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+                <Image Source="lock.png"  VerticalOptions="CenterAndExpand" HeightRequest="20" WidthRequest="20" />
+                
+                <Label TextColor="White" VerticalOptions="CenterAndExpand" Text="Ambiente criptografado" />
+                </StackLayout>
+                
+                </StackLayout>
+        </Grid>
+    </pageRender:GradientColorPage.Content>
+</pageRender:GradientColorPage>
